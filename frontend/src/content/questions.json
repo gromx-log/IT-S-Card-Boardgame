@@ -1,0 +1,341 @@
+[
+  {
+    "id": "easy-001",
+    "level": "easy",
+    "type": "multiple_choice",
+    "question": "Apa kepanjangan Wi-Fi?",
+    "options": [
+      "Wireless Fidelity",
+      "Wide Finder",
+      "Wired Finance"
+    ],
+    "answer": "Wireless Fidelity",
+    "note": "Wi-Fi sebenarnya adalah merek dagang dan bukan singkatan resmi, namun Wireless Fidelity sering digunakan.",
+    "active": true
+  },
+  {
+    "id": "easy-002",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa istilah untuk orang yang mencuri data atau membobol sistem komputer?",
+    "options": null,
+    "answer": "Hacker",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-003",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa istilah bahasa Inggris untuk \"kesalahan/kutu\" pada program yang membuat aplikasi error?",
+    "options": null,
+    "answer": "Bug",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-004",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa yang dimaksud dengan \"offline\"?",
+    "options": null,
+    "answer": "Perangkat atau sistem tidak terhubung ke internet/jaringan",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-005",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa kepanjangan WWW?",
+    "options": null,
+    "answer": "World Wide Web",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-006",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa kepanjangan QR pada QR Code?",
+    "options": null,
+    "answer": "Quick Response",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-007",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa kepanjangan USB?",
+    "options": null,
+    "answer": "Universal Serial Bus",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-008",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa kepanjangan GPS?",
+    "options": null,
+    "answer": "Global Positioning System",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-009",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa kepanjangan AI?",
+    "options": null,
+    "answer": "Artificial Intelligence",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-010",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa fungsi tombol Ctrl + Z?",
+    "options": null,
+    "answer": "Membatalkan tindakan terakhir (Undo)",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-011",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa fungsi utama password?",
+    "options": null,
+    "answer": "Mengamankan akun agar tidak bisa dibuka orang lain",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "easy-012",
+    "level": "easy",
+    "type": "open",
+    "question": "Apa itu \"backup\"?",
+    "options": null,
+    "answer": "Salinan cadangan data agar tidak hilang",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-001",
+    "level": "medium",
+    "type": "multiple_choice",
+    "question": "Apa arti tulisan \"404 Not Found\" yang muncul saat membuka website?",
+    "options": [
+      "Tidak ada internet",
+      "Halaman web tidak ditemukan atau terhapus",
+      "Ada masalah akses di pengaturan komputer"
+    ],
+    "answer": "Halaman web tidak ditemukan atau terhapus",
+    "note": "Kode status HTTP 404 menandakan browser berhasil terhubung namun server tidak dapat menemukan file atau halaman tujuan.",
+    "active": true
+  },
+  {
+    "id": "medium-002",
+    "level": "medium",
+    "type": "open",
+    "question": "Apa kepanjangan CPU?",
+    "options": null,
+    "answer": "Central Processing Unit",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-003",
+    "level": "medium",
+    "type": "open",
+    "question": "Apa kepanjangan RAM?",
+    "options": null,
+    "answer": "Random Access Memory",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-004",
+    "level": "medium",
+    "type": "open",
+    "question": "Apa kepanjangan URL?",
+    "options": null,
+    "answer": "Uniform Resource Locator",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-005",
+    "level": "medium",
+    "type": "open",
+    "question": "Ikon gembok di samping alamat website menandakan apa?",
+    "options": null,
+    "answer": "Koneksi website aman (HTTPS)",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-006",
+    "level": "medium",
+    "type": "open",
+    "question": "Apa istilah untuk pesan/email palsu yang menipu kita agar memberikan data pribadi?",
+    "options": null,
+    "answer": "Phishing",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-007",
+    "level": "medium",
+    "type": "open",
+    "question": "Apa istilah untuk penyimpanan data online seperti Google Drive?",
+    "options": null,
+    "answer": "Cloud Storage",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-008",
+    "level": "medium",
+    "type": "open",
+    "question": "Kenapa aplikasi perlu di-update?",
+    "options": null,
+    "answer": "Memperbaiki bug, menambah fitur, dan meningkatkan keamanan",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-009",
+    "level": "medium",
+    "type": "open",
+    "question": "Bos berkata: \"Kenapa penjualan bulan ini turun? Coba cari tahu dari data yang kita punya!\" Siapa yang kamu panggil?",
+    "options": null,
+    "answer": "Data Analyst",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-010",
+    "level": "medium",
+    "type": "open",
+    "question": "Tombol di aplikasi kita membingungkan dan susah ditemukan pengguna. Siapa yang kamu panggil?",
+    "options": null,
+    "answer": "UI/UX Designer",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-011",
+    "level": "medium",
+    "type": "open",
+    "question": "Kita mau membuat aplikasi yang bisa diunduh di Play Store. Siapa yang kamu panggil?",
+    "options": null,
+    "answer": "Mobile Developer",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "medium-012",
+    "level": "medium",
+    "type": "open",
+    "question": "Tombol \"Bayar\" tiba-tiba tidak bisa ditekan. Siapa yang menguji dan menemukan masalahnya?",
+    "options": null,
+    "answer": "QA Engineer",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-001",
+    "level": "hard",
+    "type": "open",
+    "question": "Website kita sering down saat banyak pengunjung dan proses update-nya manual. Siapa yang kamu panggil?",
+    "options": null,
+    "answer": "DevOps Engineer",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-002",
+    "level": "hard",
+    "type": "open",
+    "question": "Ada laporan akun pelanggan berhasil dibobol orang lain. Siapa yang kamu panggil?",
+    "options": null,
+    "answer": "Cybersecurity Specialist",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-003",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa kepanjangan HTML?",
+    "options": null,
+    "answer": "HyperText Markup Language",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-004",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa itu IP Address?",
+    "options": null,
+    "answer": "Alamat unik sebuah perangkat di dalam jaringan",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-005",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa istilah untuk program jahat yang mengunci data lalu meminta tebusan?",
+    "options": null,
+    "answer": "Ransomware",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-006",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa itu 2FA (Two-Factor Authentication)?",
+    "options": null,
+    "answer": "Verifikasi login dua lapis, misalnya password ditambah kode OTP",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-007",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa fungsi utama database?",
+    "options": null,
+    "answer": "Menyimpan dan mengelola data secara terstruktur",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-008",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa itu API?",
+    "options": null,
+    "answer": "Perantara yang menghubungkan dua aplikasi agar bisa bertukar data",
+    "note": null,
+    "active": true
+  },
+  {
+    "id": "hard-009",
+    "level": "hard",
+    "type": "open",
+    "question": "Apa yang dimaksud dengan deployment?",
+    "options": null,
+    "answer": "Proses merilis aplikasi agar bisa digunakan oleh pengguna",
+    "note": null,
+    "active": true
+  }
+]
+
