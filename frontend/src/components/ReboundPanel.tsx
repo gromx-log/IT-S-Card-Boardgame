@@ -12,49 +12,59 @@ export function ReboundPanel({
   onSkipRebound,
 }: ReboundPanelProps) {
   return (
-    <div className="w-full flex flex-col gap-4 p-5 rounded-2xl bg-[#161b22] border border-amber-500/40 shadow-xl animate-in fade-in duration-200">
+    <div className="cyber-card w-full p-4 sm:p-5 rounded-xl border border-amber-500/40 shadow-[0_0_25px_rgba(245,166,35,0.2)] anim-entry flex flex-col gap-3.5">
       {/* Title & Banner */}
       <div className="flex items-center gap-2.5">
-        <div className="w-9 h-9 rounded-xl bg-amber-500/15 border border-amber-500/30 text-amber-400 flex items-center justify-center text-xl shrink-0">
-          ⚡
+        <div className="w-9 h-9 rounded-lg bg-amber-500/20 border border-amber-500/40 text-amber-400 flex items-center justify-center shrink-0">
+          <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
         </div>
         <div>
-          <h3 className="text-lg font-bold text-white tracking-tight">
+          <h3 className="font-pixel text-xs sm:text-sm text-white tracking-wide uppercase">
             {strings.rebound.title}
           </h3>
-          <p className="text-xs text-slate-300">
+          <p className="text-xs text-slate-300 mt-0.5">
             {strings.rebound.description}
           </p>
         </div>
       </div>
 
-      {/* Rules Notice Box */}
-      <div className="rounded-xl bg-slate-800/80 border border-slate-700/80 p-3 space-y-2 text-xs">
-        <p className="text-amber-300 font-semibold flex items-start gap-1.5 leading-relaxed">
-          <span className="shrink-0 mt-0.5">⚠️</span>
-          <span>{strings.rebound.serverDownWarning}</span>
-        </p>
-        <p className="text-slate-400 flex items-start gap-1.5 leading-relaxed">
-          <span className="shrink-0 mt-0.5">💡</span>
-          <span>{strings.rebound.turnNote}</span>
-        </p>
+      {/* Rules Notice Box with cyber square pips */}
+      <div className="rounded-lg bg-[#0b081e] border border-purple-900/40 p-3 space-y-2 text-xs">
+        <div className="flex items-start gap-2 leading-relaxed">
+          <span className="w-2 h-2 rounded-[1px] bg-amber-400 shrink-0 mt-1 shadow-[0_0_6px_#f5a623]" />
+          <p className="text-amber-200/90 font-medium">
+            {strings.rebound.serverDownWarning}
+          </p>
+        </div>
+        <div className="flex items-start gap-2 leading-relaxed">
+          <span className="w-2 h-2 rounded-[1px] bg-cyan-400 shrink-0 mt-1 shadow-[0_0_6px_#00d9c8]" />
+          <p className="text-slate-300">
+            {strings.rebound.turnNote}
+          </p>
+        </div>
       </div>
 
       {/* Buttons */}
-      <div className="flex flex-col gap-2.5 pt-1">
+      <div className="flex flex-col gap-2 pt-1">
         <button
           type="button"
           onClick={onStartRebound}
-          className="w-full min-h-[54px] py-3.5 px-4 rounded-xl font-bold text-white bg-amber-600 hover:bg-amber-500 active:scale-[0.98] transition-all border border-amber-400/40 shadow-lg shadow-amber-950/30 flex items-center justify-center gap-2 text-base"
+          className="cyber-btn w-full min-h-[50px] py-3 px-4 rounded-xl font-bold text-white bg-amber-600 hover:bg-amber-500 transition-all border border-amber-400/50 shadow-[0_0_15px_rgba(245,166,35,0.3)] flex items-center justify-center gap-2"
         >
-          <span>⚡</span>
-          <span>{strings.rebound.startBtn}</span>
+          <svg className="w-4 h-4 text-amber-200" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+            <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+          </svg>
+          <span className="font-pixel text-[10px] tracking-wider uppercase">
+            {strings.rebound.startBtn}
+          </span>
         </button>
 
         <button
           type="button"
           onClick={onSkipRebound}
-          className="w-full min-h-[48px] py-3 px-4 rounded-xl font-medium text-slate-300 hover:text-white bg-slate-800 hover:bg-slate-700 active:scale-[0.98] transition-all border border-slate-700 text-sm"
+          className="cyber-btn w-full min-h-[44px] py-2.5 px-4 rounded-xl font-pixel text-[8px] tracking-wide text-slate-300 hover:text-white bg-[#100d28] hover:bg-[#151135] transition-all border border-purple-900/60 uppercase"
         >
           {strings.rebound.skipBtn}
         </button>
@@ -62,4 +72,3 @@ export function ReboundPanel({
     </div>
   );
 }
-

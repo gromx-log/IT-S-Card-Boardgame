@@ -12,7 +12,7 @@ export function RevealPanel({ disabled, onReveal }: RevealPanelProps) {
   const [holding, setHolding] = useState(false);
   const [holdProgress, setHoldProgress] = useState(0);
   const intervalRef = useRef<number | null>(null);
-  const HOLD_DURATION_MS = 250; // Quick 250ms hold prevents accidental taps while feeling instantaneous
+  const HOLD_DURATION_MS = 250; // Quick 250ms hold prevents accidental taps
 
   function startHold() {
     if (disabled) return;
@@ -46,9 +46,9 @@ export function RevealPanel({ disabled, onReveal }: RevealPanelProps) {
   }, []);
 
   return (
-    <div className="w-full pt-2 flex flex-col gap-2">
+    <div className="w-full pt-1 flex flex-col gap-2">
       <div className="text-center">
-        <p className="text-[11px] text-slate-400">
+        <p className="font-pixel text-[8px] text-slate-400 tracking-wide uppercase">
           {strings.round.revealPrompt}
         </p>
       </div>
@@ -64,10 +64,10 @@ export function RevealPanel({ disabled, onReveal }: RevealPanelProps) {
             if (!disabled) onReveal();
           }
         }}
-        className={`w-full min-h-[56px] py-4 px-6 rounded-2xl font-bold text-base transition-all relative overflow-hidden select-none active:scale-[0.98] ${
+        className={`cyber-btn w-full min-h-[52px] py-3.5 px-6 rounded-xl font-bold text-sm transition-all relative overflow-hidden select-none ${
           disabled
-            ? "bg-slate-800 text-slate-500 cursor-not-allowed border border-slate-700/50"
-            : "bg-cyan-600 hover:bg-cyan-500 text-white shadow-xl shadow-cyan-950/40 border border-cyan-400/40"
+            ? "bg-[#100d24] text-slate-600 cursor-not-allowed border border-purple-950"
+            : "bg-cyan-600 hover:bg-cyan-500 text-white shadow-[0_0_20px_rgba(0,217,200,0.3)] border border-cyan-400/50"
         }`}
       >
         {/* Hold progress bar fill */}
@@ -79,11 +79,16 @@ export function RevealPanel({ disabled, onReveal }: RevealPanelProps) {
         )}
 
         <div className="relative z-10 flex items-center justify-center gap-2">
-          <span className="text-lg">👁️</span>
-          <span>{holding ? strings.round.revealHolding : strings.round.revealButton}</span>
+          {/* Eye SVG icon */}
+          <svg className="w-4 h-4 text-cyan-200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+            <path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z" />
+            <circle cx="12" cy="12" r="3" />
+          </svg>
+          <span className="font-pixel text-[10px] tracking-wider uppercase">
+            {holding ? strings.round.revealHolding : strings.round.revealButton}
+          </span>
         </div>
       </button>
     </div>
   );
 }
-

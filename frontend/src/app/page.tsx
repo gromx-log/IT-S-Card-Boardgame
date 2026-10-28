@@ -159,7 +159,7 @@ function GameContainer() {
   const currentQuestion = state.questionId ? getQuestionById(state.questionId) : null;
 
   return (
-    <div className="min-h-full flex flex-col justify-between max-w-md w-full mx-auto pb-6">
+    <div className="relative z-10 min-h-full flex flex-col justify-between max-w-md w-full mx-auto pb-6">
       <Header
         soundEnabled={soundEnabled}
         onToggleSound={toggleSound}
@@ -167,7 +167,7 @@ function GameContainer() {
         showReaderNotice={state.status !== "select"}
       />
 
-      <main className="flex-1 px-4 py-4 flex flex-col justify-center items-center w-full">
+      <main className="flex-1 px-4 py-3 flex flex-col justify-center items-center w-full">
         {state.status === "select" && (
           <LevelSelect
             onSelectLevel={handleStartRound}
@@ -177,7 +177,7 @@ function GameContainer() {
 
         {/* Running & Active Countdown Phase */}
         {state.status === "running" && currentQuestion && (
-          <div className="w-full flex flex-col items-center gap-4 animate-in fade-in duration-150">
+          <div className="w-full flex flex-col items-center gap-3.5 anim-entry">
             <TimerDisplay
               level={currentQuestion.level}
               remainingSeconds={timer.remainingSeconds}
@@ -198,9 +198,9 @@ function GameContainer() {
           </div>
         )}
 
-        {/* Revealed Phase: Answer is conditionally shown to reader for judgement */}
+        {/* Revealed Phase */}
         {state.status === "revealed" && currentQuestion && (
-          <div className="w-full flex flex-col gap-4 animate-in fade-in duration-150">
+          <div className="w-full flex flex-col gap-3.5 anim-entry">
             <QuestionCard
               question={currentQuestion}
               attempt={state.attempt}
@@ -213,9 +213,9 @@ function GameContainer() {
           </div>
         )}
 
-        {/* Rebound Offer Phase: Attempt 1 wrong or timed out */}
+        {/* Rebound Offer Phase */}
         {state.status === "rebound_offer" && currentQuestion && (
-          <div className="w-full flex flex-col gap-4 animate-in fade-in duration-150">
+          <div className="w-full flex flex-col gap-3.5 anim-entry">
             <QuestionCard
               question={currentQuestion}
               attempt={1}
@@ -228,7 +228,7 @@ function GameContainer() {
           </div>
         )}
 
-        {/* Resolved Phase: Showing result, reward, answer & trivia note */}
+        {/* Resolved Phase */}
         {state.status === "resolved" && currentQuestion && (
           <ResolvedPanel
             question={currentQuestion}
@@ -241,8 +241,8 @@ function GameContainer() {
 
       {/* Footer attribution */}
       <footer className="text-center pt-2 px-4">
-        <p className="text-[11px] text-slate-500 font-medium">
-          IT-S Card • Information Technology Sprint
+        <p className="font-pixel text-[8px] text-purple-400/50 uppercase tracking-widest">
+          IT-S CARD SYSTEM • INFORMATION TECHNOLOGY SPRINT
         </p>
       </footer>
 
@@ -258,11 +258,13 @@ function GameContainer() {
 
 export default function HomePage() {
   return (
-    <Suspense fallback={
-      <div className="min-h-screen flex items-center justify-center text-slate-400 text-sm">
-        Memuat IT-S Card...
-      </div>
-    }>
+    <Suspense
+      fallback={
+        <div className="min-h-screen flex items-center justify-center font-pixel text-xs text-purple-400/80">
+          INITIALIZING IT-S SYSTEM...
+        </div>
+      }
+    >
       <GameContainer />
     </Suspense>
   );

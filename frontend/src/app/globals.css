@@ -1,36 +1,162 @@
 @import "tailwindcss";
 
 :root {
-  --background: #0d1117;
-  --foreground: #f8fafc;
-  --surface: #161b22;
-  --surface-border: #30363d;
-  --font-sans: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --void: #06040e;
+  --surface-dark: #0b091a;
+  --surface-card: #100d24;
+  --surface-highlight: #171333;
+  --circuit-grid: rgba(124, 58, 237, 0.08);
+  --circuit-dot: rgba(139, 92, 246, 0.2);
+  --border-neon: rgba(139, 92, 246, 0.35);
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  
+  --brand-red: #e0000b;
+  --brand-cyan: #00d9c8;
+  --brand-amber: #f5a623;
+  --brand-rose: #ff2c5a;
+  --brand-purple: #7c3aed;
+
+  --txt-main: #f1f0f7;
+  --txt-muted: #9590b3;
+  --txt-dim: #5c5778;
+
+  --font-pixel: 'Press Start 2P', monospace;
+  --font-body: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-sans);
-  --font-mono: var(--font-mono);
+html {
+  height: 100%;
 }
 
 body {
-  background-color: #0d1117;
-  color: #f8fafc;
-  font-family: var(--font-sans);
+  background-color: var(--void);
+  color: var(--txt-main);
+  font-family: var(--font-body);
   -webkit-tap-highlight-color: transparent;
   min-height: 100dvh;
+  position: relative;
+  overflow-x: hidden;
 }
 
-/* Tabular numerals for timer countdown so digits don't jitter */
+/* Cybernetic subtle grid background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: 
+    linear-gradient(to right, var(--circuit-grid) 1px, transparent 1px),
+    linear-gradient(to bottom, var(--circuit-grid) 1px, transparent 1px);
+  background-size: 28px 28px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Pixel Font Utility */
+.font-pixel {
+  font-family: var(--font-pixel);
+  letter-spacing: -0.02em;
+}
+
+/* Tabular Numerals */
 .tabular-timer {
   font-variant-numeric: tabular-nums;
   font-feature-settings: "tnum";
 }
 
-/* Custom subtle card bevel */
-.game-card-shadow {
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.07);
+/* Physical Boardgame Card Container */
+.cyber-card {
+  position: relative;
+  background: var(--surface-card);
+  border: 1px solid var(--border-neon);
+  border-radius: 14px;
+  box-shadow: 0 0 25px -5px rgba(124, 58, 237, 0.15), inset 0 0 15px -5px rgba(124, 58, 237, 0.1);
+}
+
+/* Tech corner marks */
+.cyber-card::before,
+.cyber-card::after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  border-color: var(--brand-cyan);
+  border-style: solid;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.cyber-card::before {
+  top: 4px;
+  left: 4px;
+  border-width: 2px 0 0 2px;
+}
+
+.cyber-card::after {
+  bottom: 4px;
+  right: 4px;
+  border-width: 0 2px 2px 0;
+}
+
+/* Card inner circuit grid pattern */
+.circuit-bg {
+  background-image: 
+    linear-gradient(rgba(124, 58, 237, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(124, 58, 237, 0.08) 1px, transparent 1px);
+  background-size: 16px 16px;
+}
+
+/* Beveled title badge reminiscent of physical cards */
+.cyber-title-plate {
+  position: relative;
+  background: #ffffff;
+  color: #0b091a;
+  border-radius: 6px;
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%);
+}
+
+/* Hardware button styling */
+.cyber-btn {
+  position: relative;
+  transition: transform 0.1s ease, filter 0.15s ease, box-shadow 0.15s ease;
+  user-select: none;
+}
+.cyber-btn:active {
+  transform: scale(0.98);
+}
+
+/* Performance-first GPU animations */
+@keyframes cyberFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.anim-entry {
+  animation: cyberFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 44, 90, 0.3), inset 0 0 10px rgba(255, 44, 90, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(255, 44, 90, 0.6), inset 0 0 18px rgba(255, 44, 90, 0.4);
+  }
+}
+
+.anim-urgent-glow {
+  animation: pulseGlow 0.8s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .anim-entry,
+  .anim-urgent-glow {
+    animation: none !important;
+  }
 }
